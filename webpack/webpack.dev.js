@@ -1,6 +1,7 @@
 const common = require('./webpack.common.js')
 const { PORT, HOST, BUILD_PATH } = require('../config/base.js')
 
+const webpack = require('webpack')
 const path = require('path')
 const { merge } = require('webpack-merge')
 
@@ -17,7 +18,12 @@ const config = {
         compress: true, // 一切服务都启用gzip压缩
         noInfo: false, // 隐藏webpack bundle信息之类的消息
         open: false // 告诉dev-server在服务器启动后打开浏览器
-    }
+    },
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('development')
+        })
+    ]
 }
 
 module.exports = merge(common, config)

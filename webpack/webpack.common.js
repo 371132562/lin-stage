@@ -1,7 +1,6 @@
 /* webpack基础配置 */
 const { TITLE, BUILD_PATH } = require('../config/base.js')
 
-const webpack = require('webpack')
 const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -44,9 +43,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('development')
-        }),
         new HtmlWebpackPlugin({
             title: TITLE,
             template: path.resolve(__dirname, './template/index.html')
