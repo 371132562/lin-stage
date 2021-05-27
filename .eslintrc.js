@@ -1,7 +1,10 @@
 module.exports = {
-    extends: ['eslint:recommended', 'plugin:vue/essential', 'plugin:prettier/recommended'],
+    extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'plugin:prettier/recommended'],
     parserOptions: {
-        parser: 'babel-eslint'
+        parser: 'babel-eslint',
+        ecmaVersion: 6, //默认设置为 3，5（默认）， 你可以使用 6、7、8、9 或 10 来指定你想要使用的 ECMAScript 版本。你也可以用使用年份命名的版本号指定为 2015（同 6），2016（同 7），或 2017（同 8）或 2018（同 9）或 2019 (same as 10)
+        sourceType: 'module', //sourceType - 设置为 "script" (默认) 或 "module"（如果你的代码是 ECMAScript 模块)。
+        ecmaFeatures: {} //这是个对象，表示你想使用的额外的语言特性:
     },
     env: {
         // 环境变量（包含多个预定义的全局变量）
@@ -19,4 +22,4 @@ module.exports = {
         // 自定义你的规则
         'no-unused-vars': 'warn'
     }
-};
+}

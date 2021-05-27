@@ -1,7 +1,9 @@
 /*基本静态配置*/
-export default {
+module.exports = {
+    //项目标题
+    TITLE: 'webpack-vue3',
     // IP
-    HOST: 'localhost',
+    HOST: '0.0.0.0',
     // 本地服务端口号
     PORT: 8080,
     // 项目访问前缀
@@ -14,4 +16,4 @@ export default {
     ASSET_PATH: './',
     //判断生产环境
     IS_PROD: process.env.NODE_ENV === 'production'
-};
+}

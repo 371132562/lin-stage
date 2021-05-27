@@ -1,6 +1,6 @@
 module.exports = {
     printWidth: 120, //单行长度
-    semi: true, //尾分号
+    semi: false, //尾分号
     singleQuote: true, //单引号
     trailingComma: 'none', //尾逗号
     bracketSpacing: true, //在对象字面量声明所使用的的花括号后（{）和前（}）输出空格
