@@ -2,14 +2,21 @@
     <div>
         <router-link to="/">Home</router-link> |
         <router-link to="/about">About</router-link>
-        <a-button type="primary">Primary</a-button>
+        <Button type="dashed">Primary</Button>
+        <HomeOutlined style="font-size: 30px"></HomeOutlined>
     </div>
     <router-view />
 </template>
 
 <script>
+import { Button } from 'ant-design-vue'
+import { HomeOutlined } from '@ant-design/icons-vue'
 import request from '$services'
 export default {
+    components: {
+        Button,
+        HomeOutlined
+    },
     setup() {
         console.log(ENV.API_URL)
         request.test.putTest()
