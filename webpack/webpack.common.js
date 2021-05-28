@@ -1,6 +1,7 @@
 /* webpack基础配置 */
-const { TITLE, BUILD_PATH } = require('../config/base.js')
+const { TITLE, BUILD_PATH, DLL_PATH } = require('../config/base.js')
 
+const webpack = require('webpack')
 const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -47,15 +48,15 @@ module.exports = {
             title: TITLE,
             template: path.resolve(__dirname, './template/index.html')
         }),
-        new CopyWebpackPlugin({
-            //直接复制env文件至config文件夹，打包后也可更改参数
-            patterns: [{ from: 'config/env.config.js', to: 'config' }]
-        }),
         new HtmlWebpackTagsPlugin({
             //在index.html中引入env文件
             tags: ['config/env.config.js'],
             append: false,
             hash: true
+        }),
+        new CopyWebpackPlugin({
+            //直接复制env文件至config文件夹，打包后也可更改参数
+            patterns: [{ from: 'config/env.config.js', to: 'config' }]
         }),
         new VueLoaderPlugin()
     ]

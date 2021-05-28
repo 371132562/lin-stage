@@ -12,6 +12,7 @@ module.exports = {
     PROJECT_NAME: 'demo',
     // 输出目录
     BUILD_PATH: 'dist',
+    DLL_PATH: 'dll',
     // 资源基本路径
     ASSET_PATH: './',
     //判断生产环境
