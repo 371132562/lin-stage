@@ -8,11 +8,11 @@
 </template>
 
 <script>
-import request from './services'
+import request from '$services'
 export default {
     setup() {
         console.log(ENV.API_URL)
-        request.putTest()
+        request.test.putTest()
     }
 }
 </script>
