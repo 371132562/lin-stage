@@ -1,4 +1,4 @@
-const { BUILD_PATH, DLL_PATH } = require('../config/base.js')
+const { DLL_PATH } = require('../config/base.js')
 const vendors = ['vue', 'vue-router', 'vuex', 'axios', 'ant-design-vue']
 
 const webpack = require('webpack')

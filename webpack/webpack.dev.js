@@ -1,5 +1,5 @@
 const common = require('./webpack.common.js')
-const { PORT, HOST, BUILD_PATH, DLL_PATH } = require('../config/base.js')
+const { PORT, HOST, BUILD_PATH } = require('../config/base.js')
 
 const webpack = require('webpack')
 const path = require('path')

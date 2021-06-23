@@ -1,13 +1,14 @@
 /* webpack基础配置 */
-const { TITLE, BUILD_PATH, DLL_PATH } = require('../config/base.js')
+const { TITLE, BUILD_PATH } = require('../config/base.js')
 
-const webpack = require('webpack')
 const path = require('path')
+const env = process.env.NODE_ENV
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
     entry: path.resolve(__dirname, '../src/main.js'),
@@ -84,6 +85,9 @@ module.exports = {
             //直接复制env文件至config文件夹，打包后也可更改参数
             patterns: [{ from: 'config/env.config.js', to: 'config' }]
         }),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new Dotenv({
+            path: `./.env.${env === 'production' ? 'production' : 'development'}`
+        })
     ]
 }
