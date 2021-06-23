@@ -18,7 +18,6 @@ export default {
         HomeOutlined
     },
     setup() {
-        console.log(ENV.API_URL)
         request.test.putTest()
     }
 }

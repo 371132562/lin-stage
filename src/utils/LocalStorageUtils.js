@@ -1,4 +1,4 @@
-const APP_KEY = ENV.PROJECT_NAME
+const APP_KEY = process.env.PROJECT_NAME
 
 class LocalStorageUtils {
     setItem(key, value) {

@@ -10,7 +10,7 @@ const source = CancelToken.source()
 export default class BaseRequest {
     //默认配置
     defaultConfig = {
-        baseURL: ENV.API_URL,
+        baseURL: process.env.API_URL,
         timeout: 1000 * 20000,
         withCredentials: true
     }
