@@ -19,15 +19,9 @@ module.exports = {
     },
     resolve: {
         alias: {
-            $config: path.resolve(__dirname, '../config'),
-            '@': path.resolve(__dirname, '../src'),
-            $store: path.resolve(__dirname, '../src/store'),
-            $assets: path.resolve(__dirname, '../src/assets'),
-            $utils: path.resolve(__dirname, '../src/utils'),
-            $services: path.resolve(__dirname, '../src/services'),
-            $layouts: path.resolve(__dirname, '../src/layouts'),
-            $components: path.resolve(__dirname, '../src/components')
-        }
+            '@': path.resolve(__dirname, '../src')
+        },
+        extensions: ['.vue', '.js', '.scss', 'css']
     },
     module: {
         rules: [
@@ -53,20 +47,33 @@ module.exports = {
                 use: ['style-loader', 'css-loader']
             },
             {
-                test: /\.less$/,
+                test: /\.s[ac]ss$/i,
                 use: [
-                    {
-                        loader: 'css-loader'
-                    },
-                    {
-                        loader: 'less-loader',
-                        options: {
-                            lessOptions: {
-                                javascriptEnabled: true
-                            }
-                        }
-                    }
+                    // 将 JS 字符串生成为 style 节点
+                    'style-loader',
+                    // 将 CSS 转化成 CommonJS 模块
+                    'css-loader',
+                    // 将 Sass 编译成 CSS
+                    'sass-loader'
                 ]
+            },
+            {
+                test: /\.(jpg|jpeg|png|gif|bmp)$/,
+                type: 'asset/resource',
+                //解析
+                parser: {
+                    //转base64的条件
+                    dataUrlCondition: {
+                        maxSize: 50 * 1024 // 50kb
+                    }
+                },
+                generator: {
+                    filename: 'images/[name].[hash:6][ext]'
+                }
+            },
+            {
+                test: /\.svg/,
+                type: 'asset/inline'
             }
         ]
     },

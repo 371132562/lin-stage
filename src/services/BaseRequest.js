@@ -1,7 +1,7 @@
 /* axios二次封装基础文件 */
 import axios from 'axios'
 
-import LocalStorageUtil from '$utils/LocalStorageUtils.js'
+import LocalStorageUtil from '@/utils/LocalStorageUtils.js'
 
 // 全局取消请求标识
 const CancelToken = axios.CancelToken

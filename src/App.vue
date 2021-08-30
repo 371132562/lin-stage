@@ -1,38 +1,27 @@
 <template>
-    <div>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
-        <Button type="dashed">Primary</Button>
-        <HomeOutlined style="font-size: 30px"></HomeOutlined>
-    </div>
+    <Layout></Layout>
     <router-view />
 </template>
 
 <script>
-import { Button } from 'ant-design-vue'
-import { HomeOutlined } from '@ant-design/icons-vue'
-import request from '$services'
+import Layout from '@/layouts'
+import request from '@/services'
 export default {
     components: {
-        Button,
-        HomeOutlined
+        Layout
     },
     setup() {
         request.test.putTest()
-    }
+    },
+
+    data() {
+        return {}
+    },
+    methods: {}
 }
 </script>
 
 <style>
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-}
-
-#app {
-    padding: 30px;
-}
+@import '@/assets/styles/reset.css';
+@import '@/assets/styles/global.scss';
 </style>
