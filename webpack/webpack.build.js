@@ -1,12 +1,12 @@
-const common = require('./webpack.common.js')
-const { BUILD_PATH, ASSET_PATH } = require('../config/base.js')
-
 const path = require('path')
 
 const { merge } = require('webpack-merge')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const WebpackBar = require('webpackbar')
+
+const common = require('./webpack.common.js')
+const { BUILD_PATH, ASSET_PATH } = require('../config/base.js')
 
 const config = {
     mode: 'production',

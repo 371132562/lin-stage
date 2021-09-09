@@ -7,9 +7,13 @@ const { PORT, HOST, BUILD_PATH } = require('../config/base.js')
 
 const config = {
     mode: 'development',
-    devtool: 'source-map',
+    devtool: 'eval-source-map',
     cache: true,
-    target: 'web',
+    output: {
+        path: path.resolve(__dirname, `../${BUILD_PATH}`),
+        filename: '[name].js',
+        chunkFilename: '[name].js'
+    },
     devServer: {
         port: PORT,
         host: HOST,
@@ -27,7 +31,7 @@ const config = {
                 warnings: false,
                 errors: true
             },
-            progress: true //在浏览器中以百分比显示编译进度。
+            progress: true //以百分比显示编译进度。
         }
 
         // proxy: {
