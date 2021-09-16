@@ -1,6 +1,9 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 
-const routes = [{ path: '/', component: () => import(/* webpackChunkName: "Index" */ '@/views/Index') }]
+const routes = [
+    { path: '/index', component: () => import(/* webpackChunkName: "Index" */ '@/views/Index') },
+    { path: '/:pathMatch(.*)*', redirect: '/index' }
+]
 
 const router = createRouter({
     routes,

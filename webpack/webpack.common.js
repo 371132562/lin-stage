@@ -15,6 +15,9 @@ const { TITLE } = require('../config/base.js')
 
 module.exports = {
     entry: path.resolve(__dirname, '../src/main.js'),
+    cache: {
+        type: 'filesystem' // 使用文件缓存
+    },
     resolve: {
         alias: {
             '@': path.resolve(__dirname, '../src')
@@ -93,11 +96,11 @@ module.exports = {
             patterns: [{ from: 'config/env.config.js', to: 'config' }]
         }),*/
         //解决moment打包的时候把所有的语言都打包进去的问题
-        new webpack.ContextReplacementPlugin(/moment[\\/]locale$/, /^\.\/(zh-cn)$/),
+        new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn/),
         new Dotenv({
             path: `./.env.${env === 'production' ? 'production' : 'development'}`
         }),
-        new MiniCssExtractPlugin({ filename: '[name].[contenthash:8].css' }),
+        new MiniCssExtractPlugin({ filename: 'css/[name].[contenthash:8].css' }),
         new VueLoaderPlugin()
     ]
 }

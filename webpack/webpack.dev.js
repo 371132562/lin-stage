@@ -8,7 +8,6 @@ const { PORT, HOST, BUILD_PATH } = require('../config/base.js')
 const config = {
     mode: 'development',
     devtool: 'eval-source-map',
-    cache: true,
     output: {
         path: path.resolve(__dirname, `../${BUILD_PATH}`),
         filename: '[name].js',

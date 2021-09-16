@@ -1,18 +1,22 @@
 <template>
     <div class="index-wrap">
-        <template v-for="i of 5" :key="i">
-            <IndexCard></IndexCard>
+        <template v-for="i of 22" :key="i">
+            <CoverCard>{{ i }}</CoverCard>
         </template>
     </div>
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent, ref } from 'vue'
 
 export default {
     name: 'Index',
     components: {
-        IndexCard: defineAsyncComponent(() => import('@/components/IndexCard'))
+        CoverCard: defineAsyncComponent(() => import('@/components/CoverCard'))
+    },
+    setup() {
+        const testRef = ref(0)
+        return { testRef }
     },
     methods: {}
 }
@@ -20,10 +24,6 @@ export default {
 
 <style scoped lang="scss">
 .index-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
     .index-card {
         margin-bottom: 24px;
         width: 300px;

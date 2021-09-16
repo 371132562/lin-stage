@@ -2,17 +2,20 @@ import BaseRequest from './BaseRequest'
 
 class Request extends BaseRequest {
     //定义具体 请求
-    get(url, params = {}) {
-        return this.request({ method: 'GET', url, params })
+    get(url, options) {
+        return this.request(url, { method: 'GET', ...options })
     }
-    post(url, data = {}, headers = {}) {
-        this.request({ method: 'POST', url, data, headers })
+    post(url, options) {
+        this.request(url, { method: 'post', ...options })
     }
-    put(url, data = {}, headers = {}) {
-        this.request({ method: 'PUT', url, data, headers })
+    put(url, options) {
+        this.request(url, { method: 'PUT', ...options })
     }
-    delete(url, data = {}, headers = {}) {
-        this.request({ method: 'DELETE', url, data, headers })
+    delete(url, options) {
+        this.request(url, { method: 'DELETE', ...options })
+    }
+    upload(url, options) {
+        this.request(url, { method: 'post', headers: { 'Content-Type': 'multipart/form-data' }, ...options })
     }
     all(...request) {
         return Promise.all([...request])

@@ -80,10 +80,10 @@ export default class BaseRequest {
     }
 
     //形成实例
-    request(options) {
+    request(url, options) {
         const instance = axios.create()
         // 合并options
-        options = Object.assign(this.defaultConfig, options)
+        options = Object.assign(this.defaultConfig, { url, ...options })
         // 注册拦截器
         this.interceptors(instance)
         // 返回实例

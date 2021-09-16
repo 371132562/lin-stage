@@ -3,6 +3,7 @@ const path = require('path')
 const { merge } = require('webpack-merge')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const WebpackBar = require('webpackbar')
 
 const common = require('./webpack.common.js')
@@ -18,7 +19,7 @@ const config = {
     },
     optimization: {
         minimize: true,
-        minimizer: [new TerserPlugin({ exclude: ['config'], parallel: true })],
+        minimizer: [new TerserPlugin({ exclude: ['config'], parallel: true }), new CssMinimizerPlugin()],
         runtimeChunk: 'single', //runtime单独chunk
         splitChunks: {
             chunks: 'all', //提取公共依赖插件到chunk,
