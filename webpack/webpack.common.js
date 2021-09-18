@@ -100,7 +100,7 @@ module.exports = {
         new Dotenv({
             path: `./.env.${env === 'production' ? 'production' : 'development'}`
         }),
-        new MiniCssExtractPlugin({ filename: 'css/[name].[contenthash:8].css' }),
+        new MiniCssExtractPlugin({ filename: 'styles/[name].[contenthash:8].css' }),
         new VueLoaderPlugin()
     ]
 }
