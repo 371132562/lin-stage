@@ -1,6 +1,6 @@
 <template>
     <div class="index-wrap">
-        <template v-for="i of 22" :key="i">
+        <template v-for="i of 21" :key="i">
             <CoverCard>{{ i }}</CoverCard>
         </template>
     </div>
