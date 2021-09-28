@@ -3,11 +3,11 @@
 </template>
 
 <script>
-import Layout from '@/layouts'
+import { defineAsyncComponent } from 'vue'
 import request from '@/services'
 export default {
     components: {
-        Layout
+        Layout: defineAsyncComponent(() => import('@/layouts'))
     },
     setup() {
         request.test.putTest()
