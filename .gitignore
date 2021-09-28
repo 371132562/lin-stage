@@ -2,6 +2,7 @@
 .eslintcache
 .dll-link-plugin
 dist
+frontend
 node_modules
 yarn.lock
 package-lock.json
