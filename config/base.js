@@ -11,7 +11,7 @@ module.exports = {
     // 项目名称
     PROJECT_NAME: 'demo',
     // 输出目录
-    BUILD_PATH: 'dist',
+    BUILD_PATH: 'frontend',
     DLL_PATH: 'dll',
     // 资源基本路径
     ASSET_PATH: './',
