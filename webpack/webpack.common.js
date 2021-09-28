@@ -64,12 +64,12 @@ module.exports = {
                 test: /\.(jpg|jpeg|png|gif|bmp|ico)$/,
                 type: 'asset/resource',
                 //解析
-                parser: {
-                    //转base64的条件
-                    dataUrlCondition: {
-                        maxSize: 30 * 1024 // 30kb
-                    }
-                },
+                // parser: {
+                //     //转base64的条件
+                //     dataUrlCondition: {
+                //         maxSize: 25 * 1024 // 25kb
+                //     }
+                // },
                 generator: {
                     filename: 'images/[name].[contenthash:8][ext]'
                 }
