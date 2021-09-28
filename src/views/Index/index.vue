@@ -1,6 +1,5 @@
 <template>
     <div class="index-wrap">
-        <img :src="require('@/assets/images/screenshot-20210928-143111.png')" alt="" />
         <template v-for="i of 21" :key="i">
             <CoverCard>{{ i }}</CoverCard>
         </template>
