@@ -1,7 +1,6 @@
 const path = require('path')
 
 const { merge } = require('webpack-merge')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const WebpackBar = require('webpackbar')
@@ -12,6 +11,7 @@ const { BUILD_PATH, ASSET_PATH } = require('../config/base.js')
 const config = {
     mode: 'production',
     output: {
+        clean: true, // 在生成文件之前清空 output 目录
         path: path.resolve(__dirname, `../${BUILD_PATH}`),
         publicPath: ASSET_PATH,
         filename: 'js/[name].[contenthash].js',
@@ -27,7 +27,7 @@ const config = {
             maxInitialRequests: 3 //入口点的最大并行请求数。
         }
     },
-    plugins: [new CleanWebpackPlugin(), new WebpackBar({})]
+    plugins: [new WebpackBar({})]
 }
 
 module.exports = merge(common, config)

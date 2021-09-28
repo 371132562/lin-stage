@@ -14,7 +14,7 @@ module.exports = {
     BUILD_PATH: 'frontend',
     DLL_PATH: 'dll',
     // 资源基本路径
-    ASSET_PATH: './',
+    ASSET_PATH: '/frontend/',
     //判断生产环境
     IS_PROD: process.env.NODE_ENV === 'production'
 }
