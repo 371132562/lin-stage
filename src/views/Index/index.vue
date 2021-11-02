@@ -10,7 +10,7 @@
 import { defineAsyncComponent, ref } from 'vue'
 
 export default {
-    name: 'Index',
+    name: 'IndexVue',
     components: {
         CoverCard: defineAsyncComponent(() => import('@/components/CoverCard'))
     },
