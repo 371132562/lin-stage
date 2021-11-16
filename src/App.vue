@@ -4,13 +4,13 @@
 
 <script>
 import { defineAsyncComponent } from 'vue'
-import request from '@/services'
+import Service from '@/services'
 export default {
     components: {
         Layout: defineAsyncComponent(() => import('@/layouts'))
     },
     setup() {
-        request.test.putTest()
+        Service.test.putTest()
     },
 
     data() {
@@ -21,6 +21,6 @@ export default {
 </script>
 
 <style>
-@import '@/assets/styles/reset.css';
-@import '@/assets/styles/global.scss';
+@import './assets/styles/reset.css';
+@import './assets/styles/global.scss';
 </style>
