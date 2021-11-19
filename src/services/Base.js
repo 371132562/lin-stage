@@ -7,7 +7,7 @@ import LocalStorageUtil from '@/utils/LocalStorageUtils.js'
 const CancelToken = axios.CancelToken
 const source = CancelToken.source()
 
-export default class BaseRequest {
+export default class Base {
     //默认配置
     defaultConfig = {
         baseURL: process.env.API_URL,

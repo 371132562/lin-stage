@@ -1,4 +1,3 @@
-const webpack = require('webpack')
 const path = require('path')
 const { merge } = require('webpack-merge')
 
@@ -38,9 +37,6 @@ const config = {
         // },
     },
     plugins: [
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('development')
-        })
         // new webpack.DllReferencePlugin({
         //     manifest: require(path.resolve(__dirname, `../${DLL_PATH}/manifest.json`)),
         //     context: path.resolve(__dirname, `../${DLL_PATH}`)

@@ -20,8 +20,8 @@ export default {
 .card-wrap {
     display: inline-block;
     box-sizing: border-box;
-    width: 23%;
-    margin: 16px 1%;
+    width: calc(25% - 16px);
+    margin: 8px;
     border: 1px solid #f0f0f0;
     border-radius: 4px;
     background-color: #fff;

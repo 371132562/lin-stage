@@ -10,9 +10,12 @@ export default {
         Layout: defineAsyncComponent(() => import('@/layouts'))
     },
     setup() {
-        Service.test.putTest()
+        Service.test.putTest().catch(e => {
+            console.log(e)
+        })
+        console.log(Service.test.getTest())
+        console.log(process.env.NODE_ENV)
     },
-
     data() {
         return {}
     },
