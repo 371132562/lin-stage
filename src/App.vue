@@ -14,7 +14,6 @@ export default {
             console.log(e)
         })
         console.log(Service.test.getTest())
-        console.log(process.env.NODE_ENV)
     },
     data() {
         return {}
