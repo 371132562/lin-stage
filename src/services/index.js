@@ -7,7 +7,7 @@ const files = require.context('./modules', false, /\.js$/)
 
 const Service = {}
 files.keys().forEach(key => {
-    Service[key.replace(/(\.\/|\.js)/g, '')] = files(key).default
+  Service[key.replace(/(\.\/|\.js)/g, '')] = files(key).default
 })
 
 export default Service

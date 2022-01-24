@@ -1,24 +1,24 @@
 <template>
-    <Layout></Layout>
+  <Layout></Layout>
 </template>
 
 <script>
 import { defineAsyncComponent } from 'vue'
 import Service from '@/services'
 export default {
-    components: {
-        Layout: defineAsyncComponent(() => import('@/layouts'))
-    },
-    setup() {
-        Service.test.putTest().catch(e => {
-            console.log(e)
-        })
-        console.log(Service.test.getTest())
-    },
-    data() {
-        return {}
-    },
-    methods: {}
+  components: {
+    Layout: defineAsyncComponent(() => import('@/layouts'))
+  },
+  setup() {
+    Service.test.putTest().catch(e => {
+      console.log(e)
+    })
+    console.log(Service.test.getTest())
+  },
+  data() {
+    return {}
+  },
+  methods: {}
 }
 </script>
 

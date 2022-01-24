@@ -3,8 +3,8 @@
  */
 
 const ENV = (function () {
-    return {
-        API_URL: '/',
-        PROJECT_NAME: 'webpack-vue3'
-    }
+  return {
+    API_URL: '/',
+    PROJECT_NAME: 'webpack-vue3'
+  }
 })()
