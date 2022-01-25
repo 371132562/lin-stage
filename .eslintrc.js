@@ -1,4 +1,5 @@
 module.exports = {
+  plugins: ['prettier'],
   extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'plugin:prettier/recommended'],
   parserOptions: {
     parser: '@babel/eslint-parser',
@@ -23,9 +24,9 @@ module.exports = {
   },
   rules: {
     // 自定义你的规则
-    indent: ['error', 2],
-    quotes: ['error', 'single'],
-    semi: ['error', 'never'],
+    indent: 'error',
+    quotes: 'error',
+    semi: 'error',
     'no-unused-vars': 'warn'
   }
 }

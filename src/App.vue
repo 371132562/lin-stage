@@ -1,10 +1,11 @@
 <template>
-  <Layout></Layout>
+  <Layout />
 </template>
 
 <script>
 import { defineAsyncComponent } from 'vue'
 import Service from '@/services'
+
 export default {
   components: {
     Layout: defineAsyncComponent(() => import('@/layouts'))

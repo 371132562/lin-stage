@@ -39,41 +39,41 @@ export default class Base {
     instance.interceptors.response.use(
       ({ data }) => {
         switch (data.code) {
-        case 11: //用户名不存在
-        case 12: //密码错误
+          case 11: //用户名不存在
+          case 12: //密码错误
             break
 
-        case 13: //用户名已存在
-          break
+          case 13: //用户名已存在
+            break
 
           case 14: //已登出
-          break
+            break
 
-        case 15: //未登录
-        case 16: //登录信息过期，需重新登录
-          break
+          case 15: //未登录
+                case 16: //登录信息过期，需重新登录
+            break
 
-        default:
-          return data
+          default:
+            return data
         }
         return data
       },
       error => {
         switch (error.response.status) {
-        case 401:
-          // 取消所有请求
-          source.cancel()
-          // 清空本地缓存，然后退出
-          localStorage.clear()
-          window.location.hash = '/user/login'
-          break
-
-        case 403:
-          window.location.hash = '/'
+          case 401:
+            // 取消所有请求
+            source.cancel()
+            // 清空本地缓存，然后退出
+            localStorage.clear()
+            window.location.hash = '/user/login'
             break
 
-        default:
-          return Promise.reject(error)
+          case 403:
+            window.location.hash = '/'
+            break
+
+                default:
+            return Promise.reject(error)
         }
       }
     )
