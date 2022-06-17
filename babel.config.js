@@ -1,7 +1,7 @@
 module.exports = {
   presets: [
     [
-      '@babel/preset-env',
+      "@babel/preset-env",
       {
         useBuiltIns: 'entry',
         corejs: '3'
@@ -16,7 +16,7 @@ module.exports = {
         libraryDirectory: 'es',
         style: 'css'
       },
-      'ant-design-vue'
+      "ant-design-vue"
     ],
     [
       'import',
